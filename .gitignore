@@ -1,9 +1,10 @@
 .settings/
 target/
 bin/
-src/main/resources/db.properties
+
 .*
 !.gitignore
+src/main/resources/db.properties
 *.log
 
 
