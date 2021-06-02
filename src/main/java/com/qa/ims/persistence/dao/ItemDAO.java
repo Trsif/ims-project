@@ -85,7 +85,6 @@ public class ItemDAO implements Dao<Item>{
 			LOGGER.error(e.getMessage());
 		}
 		return null;
-		return null;
 	}
 	@Override
 	public Item update(Item item) {
