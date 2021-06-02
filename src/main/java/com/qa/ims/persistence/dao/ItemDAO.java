@@ -65,6 +65,7 @@ public class ItemDAO implements Dao<Item>{
 			statement.setString(1, item.getName());
 			statement.setDouble(2, item.getValue());
 			statement.executeUpdate();
+			return readLatest();
 		}catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
@@ -73,6 +74,19 @@ public class ItemDAO implements Dao<Item>{
 		return null;
 	}
 
+	private Item readLatest() {
+		try (Connection connection = DBUtils.getInstance().getConnection();
+				Statement statement = connection.createStatement();
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM items ORDER BY id DESC LIMIT 1");) {
+			resultSet.next();
+			return modelFromResultSet(resultSet);
+		} catch (Exception e) {
+			LOGGER.debug(e);
+			LOGGER.error(e.getMessage());
+		}
+		return null;
+		return null;
+	}
 	@Override
 	public Item update(Item item) {
 		try(Connection connection = DBUtils.getInstance().getConnection();
