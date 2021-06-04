@@ -1,68 +1,19 @@
-Coverage: 34%
-# Project Title
+Coverage: 67%
+# IMS
 
-One Paragraph of project description goes here
+A program to manage customers and orders
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Clone this to your computor or where you would like the program to live 
+change into the  src folder then into the resourse folder rename the example db file into db open and edit the file to include your mysql server login info
+now go back into the main directory and go into the target folder open up a terminal and run java -jar ims-0.0.2-jar-with-dependencies.jar
 
 ### Prerequisites
-
+MySQL 
+Java 14
+Maven
 What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system. Break down into which tests and what they do
-
-### Unit Tests 
-
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### Integration Tests 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
