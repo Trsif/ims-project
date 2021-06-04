@@ -1,5 +1,6 @@
 package com.qa.ims.utils;
 
+import java.sql.Timestamp;
 import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
@@ -50,6 +51,20 @@ public class Utils {
 			}
 		} while (doubleInput == null);
 		return doubleInput;
+	}
+	
+	public Timestamp getTime() {
+		String input = null;
+		Timestamp timeInput = null;
+			do {
+				try {
+					input = getString();
+					timeInput = Timestamp.valueOf(input);
+				}catch(Exception e) {
+					LOGGER.info("Error - Please enter a date");
+				}
+			}while(timeInput == null);
+		return timeInput;
 	}
 
 }
