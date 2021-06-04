@@ -22,8 +22,11 @@ public class OrderItemController implements CrudController<OrderItem>  {
 	
 	@Override
 	public List<OrderItem> readAll() {
-		
-		return null;
+		List<OrderItem> orderItems = orderItemDAO.readAll();
+		for(OrderItem orderItem: orderItems) {
+			LOGGER.info(orderItem);
+		}
+		return orderItems;
 	}
 
 	@Override
