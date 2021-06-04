@@ -31,22 +31,21 @@ public class OrderController implements CrudController<Order> {
 	public Order create() {
 		LOGGER.info("Please enter customer id");
 		Long customerId = utils.getLong();
-		LOGGER.info("Please enter item id");
-		Long itemId = utils.getLong();
-		Order order = orderDAO.create(new Order(customerId,itemId));
+		Order order = orderDAO.create(new Order(customerId));
 		LOGGER.info("Order Created");
 		return order;
 	}
 
 	@Override
 	public Order update() {
+		java.util.Date utilDate = new java.util.Date();
 		LOGGER.info("Please enter the id of the item you would like to update");
 		Long id = utils.getLong();
 		LOGGER.info("Please enter customer id");
 		Long customerId = utils.getLong();
-		LOGGER.info("Please enter item id");
-		Long itemId = utils.getLong();
-		Order order = orderDAO.update(new Order(id,customerId,itemId));
+		@SuppressWarnings("deprecation")
+		java.sql.Timestamp date = new java.sql.Timestamp(utilDate.getDate());
+		Order order = orderDAO.update(new Order(id,customerId,date));
 		LOGGER.info("item Updated");
 		return order;
 	}
